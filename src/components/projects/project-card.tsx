@@ -7,19 +7,7 @@ import { Star, StarOff } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import { useToast } from '../ui/use-toast';
 import Link from 'next/link';
-
-function formatDateTimeToString(date: Date): string {
-  const options: Intl.DateTimeFormatOptions = {
-    day: '2-digit',
-    month: '2-digit',
-    year: 'numeric',
-    hour: '2-digit',
-    minute: '2-digit',
-    hour12: false, // Use 24-hour format
-  };
-
-  return date.toLocaleDateString(undefined, options);
-}
+import { formatDateTimeToString } from '@/lib/dates';
 
 type ProjectCardProps = {
   project: Project;
