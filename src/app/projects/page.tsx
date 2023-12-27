@@ -2,8 +2,8 @@
 
 import AddProjectButton from '@/components/projects/add-project-button';
 import { ProjectCard } from '@/components/projects/project-card';
-import { Separator } from '@/components/ui/separator';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import AcedixTitleWithSeparator from '@/components/utils/acedix-title-with-sep';
 import useProjects from '@/hooks/useProject';
 
 export default function Projects() {
@@ -25,13 +25,7 @@ export default function Projects() {
           </div>
         </div>
         <TabsContent value='favorites'>
-          <div className='flex items-center justify-between'>
-            <div className='space-y-1'>
-              <h2 className='text-2xl font-semibold tracking-tight'>Favorites</h2>
-              <p className='text-sm text-muted-foreground'>Favorite projects.</p>
-            </div>
-          </div>
-          <Separator className='my-4' />
+          <AcedixTitleWithSeparator title='Favorites' description='All projects marked as favorite.' />
           <ul className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-2'>
             {projects
               .filter((project) => project.isFavorite)
@@ -43,13 +37,7 @@ export default function Projects() {
           </ul>
         </TabsContent>
         <TabsContent value='all'>
-          <div className='flex items-center justify-between'>
-            <div className='space-y-1'>
-              <h2 className='text-2xl font-semibold tracking-tight'>All</h2>
-              <p className='text-sm text-muted-foreground'>All projects where you belong to.</p>
-            </div>
-          </div>
-          <Separator className='my-4' />
+          <AcedixTitleWithSeparator title='All' description='All projects where you belong to.' />
           <ul className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-2'>
             {projects.map((project) => (
               <li key={project.id}>
