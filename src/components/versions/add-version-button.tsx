@@ -18,6 +18,8 @@ export type AddVersionProps = {
   projectName: string;
 };
 
+// TODO : Create custom hook useVersion()
+// TODO : Create Version Form
 export default function AddVersionButton(props: AddVersionProps) {
   const [open, setOpen] = useState(false);
 

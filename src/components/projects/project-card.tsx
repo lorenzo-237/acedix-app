@@ -14,6 +14,8 @@ type ProjectCardProps = {
   toggleFavorite: (projectId: number) => void;
 };
 
+// TODO : update logic here (sheet)
+// TODO : delete logic here (for admin)
 export function ProjectCard({ project, toggleFavorite }: ProjectCardProps) {
   const { toast } = useToast();
 

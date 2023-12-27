@@ -15,6 +15,9 @@ type DropdownActionsProps = {
   version: Version;
 };
 
+// TODO : set up action here for version
+// TODO : update logic
+// TODO : delete logic (for admin)
 export default function DropdownDataTableActions({ version }: DropdownActionsProps) {
   return (
     <DropdownMenu>
