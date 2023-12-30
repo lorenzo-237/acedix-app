@@ -2,6 +2,11 @@ import { Project } from '@/models';
 import { useEffect, useState } from 'react';
 import { mockProjects } from '@/mocks/projects';
 
+type UpdateProjectDto = {
+  name: string;
+  description: string;
+};
+
 const useProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
 
@@ -11,6 +16,11 @@ const useProjects = () => {
 
   const addProject = (newProject: Project) => {
     setProjects([...projects, newProject]);
+  };
+
+  const updateProject = (projectId: number, payload: UpdateProjectDto) => {
+    const newProjects = projects.map((p) => (p.id === projectId ? { ...p, ...payload } : p));
+    setProjects(newProjects);
   };
 
   const toggleFavorite = (projectId: number) => {
@@ -25,6 +35,7 @@ const useProjects = () => {
     projects,
     addProject,
     toggleFavorite,
+    updateProject,
   };
 };
 
