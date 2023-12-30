@@ -1,11 +1,7 @@
 import { Project } from '@/models';
 import { useEffect, useState } from 'react';
 import { mockProjects } from '@/mocks/projects';
-
-type UpdateProjectDto = {
-  name: string;
-  description: string;
-};
+import { UpdateProjectDto } from '@/types/projects';
 
 const useProjects = () => {
   const [projects, setProjects] = useState<Project[]>([]);
