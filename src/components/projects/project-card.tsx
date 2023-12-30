@@ -1,17 +1,20 @@
 import * as React from 'react';
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { Project } from '@/models';
 import { Star, StarOff } from 'lucide-react';
 import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
 import { useToast } from '../ui/use-toast';
 import Link from 'next/link';
 import { formatDateTimeToString } from '@/lib/dates';
+import { UpdateProjectDto } from '@/types/projects';
 
 type ProjectCardProps = {
   project: Project;
   toggleFavorite: (projectId: number) => void;
+  updateProject: (projectId: number, payload: UpdateProjectDto) => void;
 };
 
 // TODO : update logic here (sheet)
@@ -29,24 +32,40 @@ export function ProjectCard({ project, toggleFavorite }: ProjectCardProps) {
   };
 
   return (
-    <Card className='w-[320px]'>
-      <CardHeader>
-        <CardTitle>{project.name}</CardTitle>
-        <CardDescription>Updated at : {formatDateTimeToString(project.updatedAt)}</CardDescription>
-      </CardHeader>
-      <CardFooter className='flex items-center justify-between'>
-        <Button asChild>
-          <Link href={`/projects/${project.id}`}>Open</Link>
-        </Button>
-        <Button variant='ghost' size='icon' onClick={setFavorite}>
-          <Tooltip>
-            <TooltipTrigger>
-              {project.isFavorite ? <Star className='text-primary' /> : <StarOff className='text-primary' />}
-            </TooltipTrigger>
-            <TooltipContent>{project.isFavorite ? <p>Remove favorite</p> : <p>Add favorite</p>}</TooltipContent>
-          </Tooltip>
-        </Button>
-      </CardFooter>
-    </Card>
+    <Sheet>
+      <Card className='w-[320px]'>
+        <CardHeader>
+          <CardTitle>{project.name}</CardTitle>
+          <CardDescription>Updated at : {formatDateTimeToString(project.updatedAt)}</CardDescription>
+        </CardHeader>
+        <CardFooter className='flex items-center justify-between'>
+          <div className='space-x-2'>
+            <Button asChild>
+              <Link href={`/projects/${project.id}`}>Open</Link>
+            </Button>
+
+            <SheetTrigger>
+              <Button>Update</Button>
+            </SheetTrigger>
+            <SheetContent>
+              <SheetHeader>
+                <SheetTitle>Edit project</SheetTitle>
+                <SheetDescription>
+                  Make changes to <b>{project.name}</b> here. Click save when {"you're"} done.
+                </SheetDescription>
+              </SheetHeader>
+            </SheetContent>
+          </div>
+          <Button variant='ghost' size='icon' onClick={setFavorite}>
+            <Tooltip>
+              <TooltipTrigger>
+                {project.isFavorite ? <Star className='text-primary' /> : <StarOff className='text-primary' />}
+              </TooltipTrigger>
+              <TooltipContent>{project.isFavorite ? <p>Remove favorite</p> : <p>Add favorite</p>}</TooltipContent>
+            </Tooltip>
+          </Button>
+        </CardFooter>
+      </Card>
+    </Sheet>
   );
 }
