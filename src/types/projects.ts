@@ -9,6 +9,9 @@ export const createProjectSchema = z.object({
 
 export type TCreateProjectSchema = z.infer<typeof createProjectSchema>;
 
+export const updateProjectSchema = createProjectSchema;
+export type TUpdateProjectSchema = z.infer<typeof updateProjectSchema>;
+
 export type UpdateProjectDto = {
   name: string;
   description: string;

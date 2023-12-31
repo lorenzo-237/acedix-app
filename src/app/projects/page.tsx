@@ -7,7 +7,7 @@ import AcedixTitleWithSeparator from '@/components/utils/acedix-title-with-sep';
 import useProjects from '@/hooks/useProject';
 
 export default function Projects() {
-  const { projects, addProject, toggleFavorite } = useProjects();
+  const { projects, addProject, toggleFavorite, updateProject } = useProjects();
 
   return (
     <div className=''>
@@ -31,7 +31,7 @@ export default function Projects() {
               .filter((project) => project.isFavorite)
               .map((project) => (
                 <li key={project.id}>
-                  <ProjectCard project={project} toggleFavorite={toggleFavorite} />
+                  <ProjectCard project={project} toggleFavorite={toggleFavorite} updateProject={updateProject} />
                 </li>
               ))}
           </ul>
@@ -41,7 +41,7 @@ export default function Projects() {
           <ul className='grid md:grid-cols-2 lg:grid-cols-3 gap-y-2'>
             {projects.map((project) => (
               <li key={project.id}>
-                <ProjectCard project={project} toggleFavorite={toggleFavorite} />
+                <ProjectCard project={project} toggleFavorite={toggleFavorite} updateProject={updateProject} />
               </li>
             ))}
           </ul>
