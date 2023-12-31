@@ -8,7 +8,7 @@ export default function DeleteProjectIcon() {
     <Tooltip>
       <TooltipTrigger>
         <Button variant='ghost' size='icon'>
-          <Trash2 className='text-destructive' />
+          <Trash2 className=' text-destructive' />
         </Button>
       </TooltipTrigger>
       <TooltipContent>

@@ -56,4 +56,15 @@ export const mockProjects: Project[] = [
     lastDate: new Date('2023-06-01'),
     isFavorite: false,
   },
+  {
+    id: 56,
+    name: 'TOTO LE PROJET',
+    description: 'Description du projet 5',
+    createdById: 109,
+    createdAt: new Date('2023-05-01'),
+    updatedById: 110,
+    updatedAt: new Date('2023-05-15'),
+    lastDate: new Date('2023-06-01'),
+    isFavorite: false,
+  },
 ];
