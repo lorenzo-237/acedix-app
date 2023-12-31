@@ -4,6 +4,8 @@ import { Project } from '@/models';
 import { Button } from '../ui/button';
 import { UpdateProjectDto } from '@/types/projects';
 import FormUpdateProject from './form-update-project';
+import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
+import { Pencil } from 'lucide-react';
 
 type UpdateProjectButtonProps = {
   project: Project;
@@ -16,9 +18,16 @@ export default function UpdateProjectButton({ project, updateProject }: UpdatePr
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger>
-        <Button variant='outline' className='w-16'>
-          Edit
-        </Button>
+        <Tooltip>
+          <TooltipTrigger>
+            <Button variant='ghost' size='icon'>
+              <Pencil className='text-primary' />
+            </Button>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Edit project</p>
+          </TooltipContent>
+        </Tooltip>
       </SheetTrigger>
       <SheetContent>
         <SheetHeader>
