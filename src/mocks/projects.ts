@@ -11,6 +11,23 @@ export const mockProjects: Project[] = [
     updatedAt: new Date('2023-01-10'),
     lastDate: new Date('2023-02-01'),
     isFavorite: false,
+    users: [
+      {
+        id: 1,
+        username: 'lorenzo',
+        email: 'lorenzo.magni@test.fr',
+      },
+      {
+        id: 2,
+        username: 'test',
+        email: 'test@test.fr',
+      },
+      {
+        id: 4,
+        username: 'toto',
+        email: 'toto@test.fr',
+      },
+    ],
   },
   {
     id: 2,
@@ -22,6 +39,23 @@ export const mockProjects: Project[] = [
     updatedAt: new Date('2023-02-15'),
     lastDate: new Date('2023-03-01'),
     isFavorite: true,
+    users: [
+      {
+        id: 1,
+        username: 'lorenzo',
+        email: 'lorenzo.magni@test.fr',
+      },
+      {
+        id: 2,
+        username: 'test',
+        email: 'test@test.fr',
+      },
+      {
+        id: 4,
+        username: 'toto',
+        email: 'toto@test.fr',
+      },
+    ],
   },
   {
     id: 3,
@@ -33,6 +67,18 @@ export const mockProjects: Project[] = [
     updatedAt: new Date('2023-03-20'),
     lastDate: new Date('2023-04-01'),
     isFavorite: true,
+    users: [
+      {
+        id: 1,
+        username: 'lorenzo',
+        email: 'lorenzo.magni@test.fr',
+      },
+      {
+        id: 2,
+        username: 'test',
+        email: 'test@test.fr',
+      },
+    ],
   },
   {
     id: 4,
@@ -44,6 +90,13 @@ export const mockProjects: Project[] = [
     updatedAt: new Date('2023-04-15'),
     lastDate: new Date('2023-05-01'),
     isFavorite: false,
+    users: [
+      {
+        id: 1,
+        username: 'lorenzo',
+        email: 'lorenzo.magni@test.fr',
+      },
+    ],
   },
   {
     id: 5,
@@ -66,5 +119,17 @@ export const mockProjects: Project[] = [
     updatedAt: new Date('2023-05-15'),
     lastDate: new Date('2023-06-01'),
     isFavorite: false,
+    users: [
+      {
+        id: 1,
+        username: 'lorenzo',
+        email: 'lorenzo.magni@test.fr',
+      },
+      {
+        id: 2,
+        username: 'test',
+        email: 'test@test.fr',
+      },
+    ],
   },
 ];
