@@ -9,6 +9,11 @@ export type Project = {
   updatedAt: Date;
   lastDate?: Date;
   isFavorite: boolean;
+  users?: {
+    id: number;
+    username: string;
+    email: string;
+  }[];
 };
 
 export type Version = {
