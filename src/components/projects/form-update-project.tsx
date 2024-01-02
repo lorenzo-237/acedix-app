@@ -10,6 +10,7 @@ import { TUpdateProjectSchema, UpdateProjectDto, updateProjectSchema } from '@/t
 import { Project } from '@/models';
 import { Button } from '../ui/button';
 import { useToast } from '../ui/use-toast';
+import { TeamMembers } from '../users/team-members';
 
 type FormProps = {
   project: Project;
@@ -70,6 +71,7 @@ export default function FormUpdateProject(props: FormProps) {
         />
         <Button type='submit'>Save changes</Button>
       </form>
+      <TeamMembers />
     </Form>
   );
 }

@@ -1,3 +1,5 @@
+'use client';
+
 import { ChevronDownIcon } from 'lucide-react';
 
 import { Avatar, AvatarFallback, AvatarImage } from '../ui/avatar';
