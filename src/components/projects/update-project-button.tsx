@@ -29,7 +29,7 @@ export default function UpdateProjectButton({ project, updateProject }: UpdatePr
           </TooltipContent>
         </Tooltip>
       </SheetTrigger>
-      <SheetContent>
+      <SheetContent className='w-[400px] sm:w-[540px]'>
         <SheetHeader>
           <SheetTitle>Edit project</SheetTitle>
           <SheetDescription>

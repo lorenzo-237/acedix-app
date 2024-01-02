@@ -18,6 +18,7 @@ type FormProps = {
   setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
+// TODO : add user's project logic here (=> Add user to project, Remove user to project, Update role of user into the project)
 export default function FormUpdateProject(props: FormProps) {
   const { toast } = useToast();
 
@@ -71,7 +72,7 @@ export default function FormUpdateProject(props: FormProps) {
         />
         <Button type='submit'>Save changes</Button>
       </form>
-      <TeamMembers />
+      <TeamMembers project={props.project} />
     </Form>
   );
 }
